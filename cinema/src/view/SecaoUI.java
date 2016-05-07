@@ -23,6 +23,10 @@ public class SecaoUI {
     this.listaSalas = listaSalas;
   }
 
+  public SecaoUI(RepositorioSecao listaSecoes) {
+    this.listaSecoes = listaSecoes;
+  }
+
   public void executar() {
     int opcao = 0;
     do {
@@ -71,6 +75,7 @@ public class SecaoUI {
       if(contador > 0) {
         System.out.println("\n");
       }
+      System.out.println("Codigo: "  + secao.getCodigo());
       System.out.println("Hora: "  + DateUtil.HourToString(secao.getHorario()));
       System.out.println("Filme: " + secao.getFilme().getNome() + "(" + secao.getFilme().getCodigo() + ")");
       System.out.println("Sala: "  + secao.getSala().getNumero());

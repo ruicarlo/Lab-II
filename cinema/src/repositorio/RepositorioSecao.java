@@ -13,8 +13,21 @@ public class RepositorioSecao extends IRepositorio<Secao> {
     }
     return null;
   }
+
+  public Secao buscarPorCodigo(int codigo) {
+    for(Secao secao : lista) {
+      if(secao.getCodigo() == codigo) {
+        return secao;
+      }
+    }
+    return null;
+  }
   
-  public boolean existeSecao(Date horario) {
+  public boolean existeSecaoPorCodigo(int codigo) {
+    return buscarPorCodigo(codigo) != null;
+  }
+
+  public boolean existeSecaoPorHorario(Date horario) {
     return buscarPorHorario(horario) != null;
   }
   
